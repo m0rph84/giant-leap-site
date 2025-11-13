@@ -1,22 +1,21 @@
 languageCode = "it"
 languageName = "Italiano"
-weight = 2
-title = "Blowfish"
+weight = 1
+title = "Giant Leap Website"
 
 [params]
   displayName = "Italiano"
   isoCode = "it"
   rtl = false
   dateFormat = "2 January 2006"
-  logo = "img/blowfish_logo_transparent.png"
-  description = "Un potente, leggero tema per Hugo."
+  logo = "img/GL.png"
+  description = "Giant Leap ORG di Star Citizen"
 
 [params.author]
-  name = "Blowfish"
-  image = "img/blowfish_logo.png"
-  headline = "Un potente, leggero tema per Hugo."
-  bio = "Un potente, leggero tema per Hugo."
+  name = "Morph"
+  image = "img/avatar.png"
+  headline = "Fondatore Giant Leap"
+  bio = "See you in the Verse"
   links = [
-    { x-twitter = "https://twitter.com/burufugu" },
-    { github = "https://github.com/nunocoracao/blowfish" },
+    { x-twitter = "https://twitter.com/morph84" },
   ]
