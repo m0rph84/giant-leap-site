@@ -1,21 +1,34 @@
+
+# config/_default/languages.it.toml
 languageCode = "it"
 languageName = "Italiano"
 weight = 1
-title = "Giant Leap Website"
+
+title = "Giant Leap"
 
 [params]
-  displayName = "Italiano"
-  isoCode = "it"
+  displayName = "IT"
+  isoCode = "it-IT"
   rtl = false
   dateFormat = "2 January 2006"
-  logo = "img/GL.png"
-  description = "Giant Leap ORG di Star Citizen"
+
+  # Logo (path relativo dentro /assets)
+  logo = "img/logo.png"
+
+  description = "Giant Leap: community, eventi e contenuti tra tecnologia, gaming e cultura digitale."
+  copyright = "© { year } Giant Leap"
 
 [params.author]
-  name = "Morph"
-  image = "img/avatar.png"
-  headline = "Fondatore Giant Leap"
-  bio = "See you in the Verse"
+  name = "Giant Leap"
+  image = "img/logo.png"
+  headline = "Una community italiana che fa un salto in avanti, insieme."
+  bio = "Un progetto nato per condividere esperienze, eventi, contenuti e momenti dal vivo. Dal Diario di Bordo ai raduni LeapCon: qui trovi la nostra rotta."
+
+  # TODO: sostituisci con i link ufficiali
   links = [
-    { x-twitter = "https://twitter.com/morph84" },
+    { instagram = "https://instagram.com/giantleap" },
+    { facebook = "https://facebook.com/giantleap" },
+    { youtube = "https://youtube.com/@giantleap" },
+    { tiktok = "https://tiktok.com/@giantleap" },
+    { discord = "https://discord.gg/your-invite" }
   ]

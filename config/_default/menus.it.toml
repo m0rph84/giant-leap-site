@@ -1,91 +1,47 @@
-# -- Main Menu --
-# The main menu is displayed in the header at the top of the page.
-# Acceptable parameters are name, pageRef, page, url, title, weight.
-# 
-# The simplest menu configuration is to provide:
-#   name = The name to be displayed for this menu link
-#   pageRef = The identifier of the page or section to link to
-#
-# By default the menu is ordered alphabetically. This can be
-# overridden by providing a weight value. The menu will then be
-# ordered by weight from lowest to highest.
+
+# config/_default/menus.it.toml
 
 [[main]]
-  name = "Documenti"
-  pageRef = "docs"
+  name = "Home"
+  url = "/"
   weight = 10
 
 [[main]]
-  name = "Shortcodes"
-  pageRef = "docs/shortcodes"
-  weight = 15
-
-[[main]]
-  name = "Esempi"
+  name = "Chi Siamo"
+  pageRef = "chi-siamo"
   weight = 20
 
 [[main]]
-  name = "Campioni"
-  parent = "Esempi"
-  pageRef = "samples"
-  weight = 16
-
-[[main]]
-  name = "Vetrina"
-  parent = "Esempi"
-  pageRef = "examples"
+  name = "Join Us"
+  pageRef = "join-us"
   weight = 30
 
 [[main]]
-  name = "Ricette"
-  parent = "Esempi"
-  pageRef = "guides"
+  name = "Galleria"
+  pageRef = "galleria"
   weight = 40
 
 [[main]]
-  name = "Utenti"
-  pageRef = "users"
-  weight = 90
+  name = "Diario di Bordo"
+  pageRef = "diario-di-bordo"
+  weight = 50
 
 [[main]]
-  name = "Merch"
-  url = "https://www.teepublic.com/user/blowfish-store/t-shirts"
-  weight = 100
-
-#[[main]]
-#  name = "Test"
-#  pageRef = "pagTest"
-#  weight = 1000
+  name = "LeapCon"
+  pageRef = "leapcon"
+  weight = 60
 
 [[main]]
-  identifier = "twitter"
-  pre = "x-twitter"
-  url = "https://twitter.com/burufugu"
-  weight = 200
+  name = "Staff"
+  pageRef = "staff"
+  weight = 70
 
-#[[main]]
-#  identifier = "mastodon"
-#  pre = "mastodon"
-#  weight = 300
-#  url = "https://masto.ai/@blowfish"
+[[footer]]
+  name = "Home"
+  url = "/"
+  weight = 10
 
-[[main]]
-  identifier = "github"
-  pre = "github"
-  url = "https://github.com/nunocoracao/blowfish"
-  weight = 400
-
-
-# -- Footer Menu --
-# The footer menu is displayed at the bottom of the page, just before
-# the copyright notice. Configure as per the main menu above.
-
- [[footer]]
-   name = "Tags"
-   pageRef = "tags"
-   weight = 10
-
- [[footer]]
-   name = "Autori"
-   pageRef = "authors"
-   weight = 20
+[[footer]]
+  name = "Diario di Bordo"
+  pageRef = "diario-di-bordo"
+  weight = 20

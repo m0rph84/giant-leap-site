@@ -1,24 +1,93 @@
-{{ $jsHome := resources.Get "js/home.js" | resources.Minify | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
-<div id="background">
-  {{ partial "home/background.html" . }}
+
+{{/* layouts/partials/home/custom.html */}}
+
+{{ $logoRes := resources.Get "img/logo.png" }}
+
+<div class="gl-home-gradient">
+  <div class="mx-auto flex max-w-5xl flex-col items-center px-6 py-16 text-center">
+    <div class="mb-8">
+      {{ with $logoRes }}
+        {{ $logo := .Fit "720x720" }}
+        <img
+          src="{{ $logo.RelPermalink }}"
+          width="{{ $logo.Width }}"
+          height="{{ $logo.Height }}"
+          alt="Giant Leap"
+          class="gl-home-logo mx-auto"
+          loading="eager"
+          decoding="async"
+        />
+      {{ else }}
+        <h1 class="text-5xl font-extrabold tracking-tight text-primary-300">Giant Leap</h1>
+      {{ end }}
+    </div>
+
+    <p class="max-w-2xl text-lg text-neutral-200">
+      Community, eventi e contenuti: facciamo un salto in avanti insieme — con lo sguardo rivolto alle stelle.
+    </p>
+
+    {{/* Social links (icona) */}}
+    {{ with .Site.Params.author.links }}
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+        {{ range . }}
+          {{ range $name, $url := . }}
+            <a
+              href="{{ $url }}"
+              class="gl-social-link inline-flex items-center justify-center rounded-full p-3 text-neutral-100"
+              target="_blank"
+              rel="me noopener noreferrer"
+              title="{{ $name | title }}"
+            >
+              {{ partial "icon.html" $name }}
+              <span class="sr-only">{{ $name }}</span>
+            </a>
+          {{ end }}
+        {{ end }}
+      </div>
+    {{ end }}
+
+    {{/* Quick navigation */}}
+    <div class="mt-12 grid w-full max-w-4xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <a class="gl-card" href="{{ relURL "chi-siamo/" }}">
+        <div class="gl-card-title text-primary-200">Chi Siamo</div>
+        <div class="gl-card-desc text-neutral-200">Missione, valori e storia del progetto.</div>
+      </a>
+
+      <a class="gl-card" href="{{ relURL "join-us/" }}">
+        <div class="gl-card-title text-primary-200">Join Us</div>
+        <div class="gl-card-desc text-neutral-200">Entra nella community e partecipa alle attività.</div>
+      </a>
+
+      <a class="gl-card" href="{{ relURL "galleria/" }}">
+        <div class="gl-card-title text-primary-200">Galleria</div>
+        <div class="gl-card-desc text-neutral-200">Foto e momenti: eventi, backstage e raduni.</div>
+      </a>
+
+      <a class="gl-card" href="{{ relURL "diario-di-bordo/" }}">
+        <div class="gl-card-title text-primary-200">Diario di Bordo</div>
+        <div class="gl-card-desc text-neutral-200">Aggiornamenti, racconti e comunicazioni ufficiali.</div>
+      </a>
+
+      <a class="gl-card" href="{{ relURL "leapcon/" }}">
+        <div class="gl-card-title text-primary-200">LeapCon</div>
+        <div class="gl-card-desc text-neutral-200">Il nostro evento dal vivo: programma, info e edizioni.</div>
+      </a>
+
+      <a class="gl-card" href="{{ relURL "staff/" }}">
+        <div class="gl-card-title text-primary-200">Staff</div>
+        <div class="gl-card-desc text-neutral-200">Chi c’è dietro Giant Leap: ruoli e contatti.</div>
+      </a>
+    </div>
+
+    {{ if .Content }}
+      <div class="prose prose-invert mt-14 max-w-3xl">
+        {{ .Content }}
+      </div>
+    {{ end }}
+  </div>
 </div>
-<div id="hero" style="display:none">
-  {{ partial "home/hero.html" . }}
+
+<div class="mx-auto max-w-5xl px-6 pb-16">
+  {{/* Mostra gli ultimi articoli dal Diario di Bordo */}}
+  {{ partial "recent-articles/main.html" . }}
 </div>
-<div id="profile" style="display:none">
-  {{ partial "home/profile.html" . }}
-</div>
-<div id="card" style="display:none">
-  {{ partial "home/card.html" . }}
-</div>
-<div id="page" style="display:none">
-  {{ partial "home/page.html" . }}
-</div>
-<section>
-  {{ partial "recent-articles-demo.html" . }}
-</section>
-<script
-  defer
-  type="text/javascript"
-  src="{{ $jsHome.RelPermalink }}"
-  integrity="{{ $jsHome.Data.Integrity }}"></script>
