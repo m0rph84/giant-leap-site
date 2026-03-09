@@ -4,8 +4,14 @@
 {{ $logoRes := resources.Get "img/logo.png" }}
 
 <div class="gl-home-gradient">
-  <div class="mx-auto flex max-w-5xl flex-col items-center px-6 py-16 text-center">
-    <div class="mb-8">
+  {{/* z-10 per stare sopra le stelle del ::before */}}
+  <div class="relative z-10 mx-auto flex max-w-5xl flex-col items-center px-6 py-16 text-center">
+
+    {{/* Badge callsign org */}}
+    <div class="gl-org-badge" aria-hidden="true">◆ &nbsp;Giant Leap&nbsp; · &nbsp;Star Citizen Org&nbsp; ◆</div>
+
+    {{/* Logo */}}
+    <div class="mb-6">
       {{ with $logoRes }}
         {{ $logo := .Fit "720x720" }}
         <img
@@ -22,11 +28,13 @@
       {{ end }}
     </div>
 
-    <p class="max-w-2xl text-lg text-neutral-200">
-      Community, eventi e contenuti: facciamo un salto in avanti insieme — con lo sguardo rivolto alle stelle.
+    {{/* Tagline */}}
+    <p class="max-w-2xl text-lg text-neutral-200 leading-relaxed tracking-wide">
+      Community, eventi e contenuti: facciamo un salto in avanti insieme —<br class="hidden sm:block">
+      <span class="text-primary-300 font-semibold">con lo sguardo rivolto alle stelle.</span>
     </p>
 
-    {{/* Social links (icona) */}}
+    {{/* Social links */}}
     {{ with .Site.Params.author.links }}
       <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
         {{ range . }}
@@ -46,48 +54,64 @@
       </div>
     {{ end }}
 
+    {{/* CTA buttons */}}
+    <div class="mt-7 flex flex-wrap items-center justify-center gap-3">
+      <a href="{{ relURL "join-us/" }}" class="gl-btn-primary">
+        {{ partial "icon.html" "heart" }}
+        Entra nella flotta
+      </a>
+      <a href="{{ relURL "diario-di-bordo/" }}" class="gl-btn-secondary">
+        {{ partial "icon.html" "pencil" }}
+        Leggi il Diario
+      </a>
+    </div>
+
+    {{/* Divider tattico */}}
+    <div class="gl-divider" aria-hidden="true"></div>
+
     {{/* Quick navigation */}}
-    <div class="mt-12 grid w-full max-w-4xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    <div class="mt-8 grid w-full max-w-4xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
       <a class="gl-card" href="{{ relURL "chi-siamo/" }}">
+        <div class="gl-card-icon">{{ partial "icon.html" "globe" }}</div>
         <div class="gl-card-title text-primary-200">Chi Siamo</div>
         <div class="gl-card-desc text-neutral-200">Missione, valori e storia del progetto.</div>
       </a>
 
       <a class="gl-card" href="{{ relURL "join-us/" }}">
+        <div class="gl-card-icon">{{ partial "icon.html" "heart" }}</div>
         <div class="gl-card-title text-primary-200">Join Us</div>
         <div class="gl-card-desc text-neutral-200">Entra nella community e partecipa alle attività.</div>
       </a>
 
       <a class="gl-card" href="{{ relURL "galleria/" }}">
+        <div class="gl-card-icon">{{ partial "icon.html" "image" }}</div>
         <div class="gl-card-title text-primary-200">Galleria</div>
         <div class="gl-card-desc text-neutral-200">Foto e momenti: eventi, backstage e raduni.</div>
       </a>
 
       <a class="gl-card" href="{{ relURL "diario-di-bordo/" }}">
+        <div class="gl-card-icon">{{ partial "icon.html" "pencil" }}</div>
         <div class="gl-card-title text-primary-200">Diario di Bordo</div>
         <div class="gl-card-desc text-neutral-200">Aggiornamenti, racconti e comunicazioni ufficiali.</div>
       </a>
 
       <a class="gl-card" href="{{ relURL "leapcon/" }}">
+        <div class="gl-card-icon">{{ partial "icon.html" "star" }}</div>
         <div class="gl-card-title text-primary-200">LeapCon</div>
         <div class="gl-card-desc text-neutral-200">Il nostro evento dal vivo: programma, info e edizioni.</div>
       </a>
 
       <a class="gl-card" href="{{ relURL "staff/" }}">
+        <div class="gl-card-icon">{{ partial "icon.html" "shield" }}</div>
         <div class="gl-card-title text-primary-200">Staff</div>
-        <div class="gl-card-desc text-neutral-200">Chi c’è dietro Giant Leap: ruoli e contatti.</div>
+        <div class="gl-card-desc text-neutral-200">Chi c'è dietro Giant Leap: ruoli e contatti.</div>
       </a>
     </div>
 
-    {{ if .Content }}
-      <div class="prose prose-invert mt-14 max-w-3xl">
-        {{ .Content }}
-      </div>
-    {{ end }}
   </div>
 </div>
 
 <div class="mx-auto max-w-5xl px-6 pb-16">
-  {{/* Mostra gli ultimi articoli dal Diario di Bordo */}}
+  <div class="gl-section-heading">// Ultimi aggiornamenti</div>
   {{ partial "recent-articles/main.html" . }}
 </div>

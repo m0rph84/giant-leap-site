@@ -26,7 +26,7 @@ mainSections = ["diario-di-bordo"]
 
 [homepage]
   layout = "custom"
-  showRecent = false
+  showRecent = true
   showRecentItems = 3
   showMoreLink = true
   showMoreLinkDest = "/diario-di-bordo/"
