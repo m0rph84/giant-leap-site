@@ -1,23 +1,24 @@
-
 ---
-title: "Chi Siamo"
-description: "Missione, valori e storia di Giant Leap."
+title: "Chi siamo"
+description: "Missione, valori e direzione di Giant Leap."
 ---
 
-## La nostra missione
+## La nostra rotta
 
-Costruire una community **aperta, inclusiva e curiosa**, capace di unire persone con la voglia di imparare, creare e divertirsi.
+Giant Leap e una org italiana di **Star Citizen** costruita attorno a gioco di squadra, affidabilita e voglia di crescere insieme nel tempo.
 
-## Cosa facciamo
+Non puntiamo solo a riempire un roster: vogliamo creare un gruppo capace di organizzarsi bene, accogliere nuovi piloti e dare continuita alle attivita della org.
 
-- **Eventi** (online e in presenza)
-- **Contenuti** (video, post, guide, format)
-- **Progetti** e collaborazioni
-- Un **Diario di Bordo** per raccontare ogni step
+## Cosa vogliamo costruire
 
-## Valori
+- Operazioni di gruppo coordinate e accessibili
+- Un ambiente maturo, ordinato e senza drama
+- Supporto ai nuovi membri che vogliono imparare
+- Eventi, contenuti e momenti community oltre il singolo login
 
-- Rispetto prima di tutto
-- Passione e competenza
-- Condivisione e crescita
-- Zero drama, tanta energia
+## I nostri valori
+
+- **Rispetto** nelle comunicazioni e nel gioco
+- **Costanza** piu importante del rumore
+- **Collaborazione** prima dell'ego personale
+- **Chiarezza** su ruoli, obiettivi e aspettative

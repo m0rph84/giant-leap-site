@@ -1,4 +1,4 @@
-baseURL = 'https://example.org/'
-languageCode = 'en-us'
-title = 'Giant Leap Site'
-theme = 'blowfish'
+baseURL = "https://giantleapsite.netlify.app/"
+languageCode = "it"
+title = "Giant Leap"
+theme = "blowfish"

@@ -1,13 +1,8 @@
-
 ---
 title: "Giant Leap"
-description: "Community, eventi e contenuti: facciamo un salto in avanti insieme."
+description: "Org italiana di Star Citizen orientata a gioco di squadra, fleet ops e crescita condivisa."
 ---
 
-## Benvenuto a bordo
+## Home
 
-Giant Leap è uno spazio dove condividere **idee, progetti ed esperienze**: online e dal vivo.
-
-- Vuoi capire chi siamo? Vai su **Chi Siamo**
-- Vuoi partecipare? Entra su **Join Us**
-- Vuoi restare aggiornato? Segui il **Diario di Bordo**
+Hub principale della org Giant Leap.

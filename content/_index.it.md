@@ -1,4 +1,4 @@
 ---
 title: "Giant Leap"
-description: "Community italiana di Star Citizen."
+description: "Org italiana di Star Citizen."
 ---

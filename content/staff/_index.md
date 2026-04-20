@@ -1,18 +1,17 @@
-
 ---
 title: "Staff"
-description: "Il team Giant Leap."
+description: "Ruoli chiave e riferimenti interni di Giant Leap."
 ---
 
-## Il team
+## Struttura staff
 
-*(Compila con nomi/ruoli reali quando vuoi.)*
+Qui puoi presentare le persone che tengono in rotta la org, con ruoli chiari e responsabilita leggibili.
 
-- **Founder / Admin** — Nome
-- **Event Team** — Nome
-- **Content Team** — Nome
-- **Moderation** — Nome
+- **Leadership**: visione, coordinamento generale, direzione della org
+- **Recruitment**: onboarding e primi contatti con i nuovi membri
+- **Operations**: organizzazione attivita, fleet ops e calendario interno
+- **Community**: moderazione, supporto e presenza sui canali
 
-## Contatti
+## Prossimo passo
 
-Per richieste ufficiali: **info@giantleap.it** *(sostituisci se diverso)*
+Quando hai i nomi definitivi, conviene trasformare questa pagina in una scheda per ogni ruolo con handle Discord o RSI.

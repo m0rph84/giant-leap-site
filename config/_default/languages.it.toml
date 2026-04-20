@@ -1,4 +1,3 @@
-
 # config/_default/languages.it.toml
 languageCode = "it"
 languageName = "Italiano"
@@ -12,23 +11,20 @@ title = "Giant Leap"
   rtl = false
   dateFormat = "2 January 2006"
 
-  # Logo (path relativo dentro /assets)
   logo = "img/logo.png"
-
-  description = "Giant Leap: community, eventi e contenuti tra tecnologia, gaming e cultura digitale."
-  copyright = "© { year } Giant Leap"
+  description = "Giant Leap e una org italiana di Star Citizen dedicata a gioco di squadra, fleet ops, eventi e crescita condivisa."
+  copyright = "(c) { year } Giant Leap"
 
 [params.author]
   name = "Giant Leap"
   image = "img/logo.png"
-  headline = "Una community italiana che fa un salto in avanti, insieme."
-  bio = "Un progetto nato per condividere esperienze, eventi, contenuti e momenti dal vivo. Dal Diario di Bordo ai raduni LeapCon: qui trovi la nostra rotta."
+  headline = "Org italiana di Star Citizen per piloti che cercano struttura, spirito di squadra e una rotta comune."
+  bio = "Giant Leap nasce per coordinare attivita di org, operazioni di flotta, reclutamento e momenti community in un ambiente serio ma accessibile."
 
-  # TODO: sostituisci con i link ufficiali
+  # Sostituisci con i link ufficiali della org
   links = [
+    { discord = "https://discord.gg/your-invite" },
+    { github = "https://github.com/m0rph84/giant-leap-site" },
     { instagram = "https://instagram.com/giantleap" },
-    { facebook = "https://facebook.com/giantleap" },
-    { youtube = "https://youtube.com/@giantleap" },
-    { tiktok = "https://tiktok.com/@giantleap" },
-    { discord = "https://discord.gg/your-invite" }
+    { youtube = "https://youtube.com/@giantleap" }
   ]

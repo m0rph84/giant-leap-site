@@ -1,16 +1,11 @@
-
 {{/* layouts/partials/home/custom.html */}}
 
 {{ $logoRes := resources.Get "img/logo.png" }}
 
 <div class="gl-home-gradient">
-  {{/* z-10 per stare sopra le stelle del ::before */}}
-  <div class="relative z-10 mx-auto flex max-w-5xl flex-col items-center px-6 py-16 text-center">
+  <div class="relative z-10 mx-auto flex max-w-5xl flex-col items-center px-6 py-16 text-center sm:py-20">
+    <div class="gl-org-badge" aria-hidden="true">GIANT LEAP // STAR CITIZEN ORG // ITA</div>
 
-    {{/* Badge callsign org */}}
-    <div class="gl-org-badge" aria-hidden="true">◆ &nbsp;Giant Leap&nbsp; · &nbsp;Star Citizen Org&nbsp; ◆</div>
-
-    {{/* Logo */}}
     <div class="mb-6">
       {{ with $logoRes }}
         {{ $logo := .Fit "720x720" }}
@@ -28,13 +23,11 @@
       {{ end }}
     </div>
 
-    {{/* Tagline */}}
-    <p class="max-w-2xl text-lg text-neutral-200 leading-relaxed tracking-wide">
-      Community, eventi e contenuti: facciamo un salto in avanti insieme —<br class="hidden sm:block">
-      <span class="text-primary-300 font-semibold">con lo sguardo rivolto alle stelle.</span>
+    <p class="max-w-3xl text-lg leading-relaxed tracking-wide text-neutral-200 sm:text-xl">
+      Una org italiana di <span class="font-semibold text-primary-300">Star Citizen</span> per piloti che cercano gioco di squadra,
+      organizzazione e continuita nelle attivita, non solo sessioni casuali.
     </p>
 
-    {{/* Social links */}}
     {{ with .Site.Params.author.links }}
       <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
         {{ range . }}
@@ -54,64 +47,123 @@
       </div>
     {{ end }}
 
-    {{/* CTA buttons */}}
-    <div class="mt-7 flex flex-wrap items-center justify-center gap-3">
+    <div class="mt-7 flex w-full max-w-xl flex-wrap items-center justify-center gap-3">
       <a href="{{ relURL "join-us/" }}" class="gl-btn-primary">
-        {{ partial "icon.html" "heart" }}
-        Entra nella flotta
+        Unisciti alla org
       </a>
-      <a href="{{ relURL "diario-di-bordo/" }}" class="gl-btn-secondary">
-        {{ partial "icon.html" "pencil" }}
-        Leggi il Diario
+      <a href="{{ relURL "chi-siamo/" }}" class="gl-btn-secondary">
+        Conosci la nostra rotta
       </a>
     </div>
 
-    {{/* Divider tattico */}}
     <div class="gl-divider" aria-hidden="true"></div>
 
-    {{/* Quick navigation */}}
-    <div class="mt-8 grid w-full max-w-4xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    <div class="mt-4 max-w-2xl text-sm uppercase tracking-[0.28em] text-primary-400/80">
+      Reclutamento / Eventi / Fleet ops / Supporto nuovi piloti
+    </div>
+
+    <div class="mt-8 grid w-full max-w-5xl grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
       <a class="gl-card" href="{{ relURL "chi-siamo/" }}">
-        <div class="gl-card-icon">{{ partial "icon.html" "globe" }}</div>
-        <div class="gl-card-title text-primary-200">Chi Siamo</div>
-        <div class="gl-card-desc text-neutral-200">Missione, valori e storia del progetto.</div>
+        <div class="gl-card-icon">[01]</div>
+        <div class="gl-card-title">Chi siamo</div>
+        <div class="gl-card-desc">Identita, obiettivi e stile operativo della org.</div>
       </a>
 
       <a class="gl-card" href="{{ relURL "join-us/" }}">
-        <div class="gl-card-icon">{{ partial "icon.html" "heart" }}</div>
-        <div class="gl-card-title text-primary-200">Join Us</div>
-        <div class="gl-card-desc text-neutral-200">Entra nella community e partecipa alle attività.</div>
-      </a>
-
-      <a class="gl-card" href="{{ relURL "galleria/" }}">
-        <div class="gl-card-icon">{{ partial "icon.html" "image" }}</div>
-        <div class="gl-card-title text-primary-200">Galleria</div>
-        <div class="gl-card-desc text-neutral-200">Foto e momenti: eventi, backstage e raduni.</div>
+        <div class="gl-card-icon">[02]</div>
+        <div class="gl-card-title">Recruitment</div>
+        <div class="gl-card-desc">Come entrare, cosa chiediamo e cosa offriamo ai nuovi membri.</div>
       </a>
 
       <a class="gl-card" href="{{ relURL "diario-di-bordo/" }}">
-        <div class="gl-card-icon">{{ partial "icon.html" "pencil" }}</div>
-        <div class="gl-card-title text-primary-200">Diario di Bordo</div>
-        <div class="gl-card-desc text-neutral-200">Aggiornamenti, racconti e comunicazioni ufficiali.</div>
+        <div class="gl-card-icon">[03]</div>
+        <div class="gl-card-title">Diario di bordo</div>
+        <div class="gl-card-desc">Report, aggiornamenti e comunicazioni ufficiali della flotta.</div>
+      </a>
+
+      <a class="gl-card" href="{{ relURL "galleria/" }}">
+        <div class="gl-card-icon">[04]</div>
+        <div class="gl-card-title">Galleria</div>
+        <div class="gl-card-desc">Screenshot, momenti di gioco e identita visiva della org.</div>
       </a>
 
       <a class="gl-card" href="{{ relURL "leapcon/" }}">
-        <div class="gl-card-icon">{{ partial "icon.html" "star" }}</div>
-        <div class="gl-card-title text-primary-200">LeapCon</div>
-        <div class="gl-card-desc text-neutral-200">Il nostro evento dal vivo: programma, info e edizioni.</div>
+        <div class="gl-card-icon">[05]</div>
+        <div class="gl-card-title">Eventi</div>
+        <div class="gl-card-desc">Attivita speciali, incontri e iniziative community-driven.</div>
       </a>
 
       <a class="gl-card" href="{{ relURL "staff/" }}">
-        <div class="gl-card-icon">{{ partial "icon.html" "shield" }}</div>
-        <div class="gl-card-title text-primary-200">Staff</div>
-        <div class="gl-card-desc text-neutral-200">Chi c'è dietro Giant Leap: ruoli e contatti.</div>
+        <div class="gl-card-icon">[06]</div>
+        <div class="gl-card-title">Staff</div>
+        <div class="gl-card-desc">Ruoli chiave, contatti e riferimenti interni dell'organizzazione.</div>
       </a>
     </div>
-
   </div>
 </div>
 
-<div class="mx-auto max-w-5xl px-6 pb-16">
-  <div class="gl-section-heading">// Ultimi aggiornamenti</div>
+<section class="mx-auto grid max-w-5xl gap-6 px-6 py-6 lg:grid-cols-[1.3fr_0.9fr]">
+  <div class="gl-panel">
+    <div class="gl-section-heading">Come operiamo</div>
+    <p class="gl-panel-copy">
+      Giant Leap punta a costruire una presenza credibile nel Verse: attivita coordinate, onboarding chiaro e una struttura che permetta
+      ai membri di capire subito dove inserirsi.
+    </p>
+    <div class="mt-6 grid gap-4 sm:grid-cols-3">
+      <div class="gl-mini-card">
+        <div class="gl-mini-label">01</div>
+        <h3 class="gl-mini-title">Organizzazione</h3>
+        <p class="gl-mini-copy">Ruoli leggibili, comunicazione chiara e aspettative esplicite.</p>
+      </div>
+      <div class="gl-mini-card">
+        <div class="gl-mini-label">02</div>
+        <h3 class="gl-mini-title">Operativita</h3>
+        <p class="gl-mini-copy">Fleet ops, attivita di gruppo e presenza costante nel tempo.</p>
+      </div>
+      <div class="gl-mini-card">
+        <div class="gl-mini-label">03</div>
+        <h3 class="gl-mini-title">Community</h3>
+        <p class="gl-mini-copy">Ambiente maturo, accessibile e costruito per durare.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="gl-panel gl-panel-accent">
+    <div class="gl-section-heading">Chi cerchiamo</div>
+    <ul class="gl-list">
+      <li>Piloti che apprezzano il gioco di squadra piu del protagonismo.</li>
+      <li>Persone costanti, corrette e collaborative sui canali della org.</li>
+      <li>Membri interessati a crescere insieme in modo ordinato.</li>
+      <li>Nuovi arrivati che vogliono trovare una struttura chiara.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="mx-auto max-w-5xl px-6 py-6">
+  <div class="gl-panel">
+    <div class="gl-section-heading">Aree della org</div>
+    <div class="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+      <div class="gl-lane-card">
+        <h3 class="gl-lane-title">Reclutamento</h3>
+        <p class="gl-lane-copy">Ingresso graduale, presentazione e allineamento con valori e obiettivi.</p>
+      </div>
+      <div class="gl-lane-card">
+        <h3 class="gl-lane-title">Fleet ops</h3>
+        <p class="gl-lane-copy">Attivita organizzate con focus su coordinazione, disciplina e leggibilita.</p>
+      </div>
+      <div class="gl-lane-card">
+        <h3 class="gl-lane-title">Eventi</h3>
+        <p class="gl-lane-copy">Appuntamenti interni e community per tenere viva la presenza della org.</p>
+      </div>
+      <div class="gl-lane-card">
+        <h3 class="gl-lane-title">Comunicazioni</h3>
+        <p class="gl-lane-copy">Diario di bordo e canali ufficiali per aggiornare membri e interessati.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="mx-auto max-w-5xl px-6 pb-16 pt-6">
+  <div class="gl-section-heading">Ultimi aggiornamenti</div>
   {{ partial "recent-articles/main.html" . }}
 </div>

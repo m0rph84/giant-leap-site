@@ -1,18 +1,25 @@
-
 ---
-title: "Join Us"
-description: "Come entrare nella community Giant Leap."
+title: "Join us"
+description: "Come entrare in Giant Leap."
 ---
 
-## Entra nella community
+## Reclutamento
 
-Vuoi far parte di Giant Leap?
+Se vuoi unirti a Giant Leap, l'obiettivo non e solo aggiungere un nome alla lista: cerchiamo persone che vogliano partecipare davvero alla vita della org.
 
-1. Seguici sui social (li trovi in Home).
-2. Entra nei nostri canali (Discord/Telegram ecc.).
-3. Presentati e dicci cosa ti appassiona.
+## Come entrare
 
-## Collaborazioni
+1. Passa dai nostri canali ufficiali.
+2. Presentati e raccontaci che tipo di esperienza cerchi in Star Citizen.
+3. Entra in contatto con lo staff per capire fit, disponibilita e interessi.
 
-Se vuoi proporre un progetto, una partnership o un evento:
-- scrivi a: **info@giantleap.it** *(sostituisci con la mail corretta se diversa)*
+## Cosa cerchiamo
+
+- Mentalita collaborativa
+- Presenza corretta e rispettosa
+- Interesse per attivita di org e gioco di squadra
+- Voglia di costruire qualcosa che duri
+
+## Contatti
+
+Per candidature, collaborazioni o domande puoi usare i canali social della home oppure il server Discord della org.

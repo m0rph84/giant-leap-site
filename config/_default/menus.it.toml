@@ -7,12 +7,12 @@
   weight = 10
 
 [[main]]
-  name = "Chi Siamo"
+  name = "Chi siamo"
   pageRef = "chi-siamo"
   weight = 20
 
 [[main]]
-  name = "Join Us"
+  name = "Join us"
   pageRef = "join-us"
   weight = 30
 
@@ -22,12 +22,12 @@
   weight = 40
 
 [[main]]
-  name = "Diario di Bordo"
+  name = "Diario di bordo"
   pageRef = "diario-di-bordo"
   weight = 50
 
 [[main]]
-  name = "LeapCon"
+  name = "Eventi"
   pageRef = "leapcon"
   weight = 60
 
@@ -42,6 +42,6 @@
   weight = 10
 
 [[footer]]
-  name = "Diario di Bordo"
+  name = "Diario di bordo"
   pageRef = "diario-di-bordo"
   weight = 20

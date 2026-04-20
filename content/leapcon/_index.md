@@ -1,17 +1,19 @@
-
 ---
-title: "LeapCon"
-description: "Il nostro evento dal vivo: info e prossime edizioni."
+title: "Eventi"
+description: "Attivita speciali, iniziative community e appuntamenti firmati Giant Leap."
 ---
 
-## Cos'è LeapCon
+## Eventi Giant Leap
 
-LeapCon è il nostro appuntamento dal vivo: talk, community, attività e tanta energia.
+Questa sezione puo ospitare i principali appuntamenti della org: serate dedicate, incontri community, attivita speciali e qualunque iniziativa valga la pena fissare in calendario.
 
-## Prossima edizione
+## Cosa pubblicare qui
 
-*(Inserisci qui data, luogo e programma.)*
+- prossimi eventi con data e orario
+- recap di attivita passate
+- format ricorrenti della org
+- eventuali eventi live o collaborazioni
 
-## Vuoi partecipare o proporre un contenuto?
+## Stato attuale
 
-Scrivici o contattaci sui social.
+La struttura e pronta: quando definisci il calendario possiamo trasformare questa pagina in un vero hub eventi.

@@ -1,9 +1,13 @@
-
 ---
 title: "Galleria"
-description: "Foto, eventi e momenti Giant Leap."
+description: "Screenshot, momenti di org ed eventi firmati Giant Leap."
 ---
 
-Qui raccoglieremo le foto degli eventi, del backstage e dei raduni.
+Questa sezione raccogliera screenshot, recap visuali e materiale dagli eventi della org.
 
-> Suggerimento: puoi usare lo shortcode `gallery` di Blowfish per creare griglie responsive.
+Puoi usarla per pubblicare:
+
+- immagini di fleet ops e missioni
+- foto di gruppo e momenti community
+- visual promo della org
+- recap di eventi speciali

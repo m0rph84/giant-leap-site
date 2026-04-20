@@ -1,14 +1,16 @@
-
 # config/_default/hugo.toml
 theme = "blowfish"
 baseURL = "https://giantleapsite.netlify.app/"
 
 languageCode = "it"
 defaultContentLanguage = "it"
+disableLanguages = ["en"]
+
+disableKinds = ["taxonomy", "term"]
 
 enableRobotsTXT = true
 summaryLength = 0
-enableEmoji = true
+enableEmoji = false
 
 [pagination]
   pagerSize = 10
@@ -19,3 +21,41 @@ enableEmoji = true
 [markup]
   [markup.highlight]
     noClasses = false
+
+[module]
+  [[module.mounts]]
+    source = "archetypes"
+    target = "archetypes"
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"
+  [[module.mounts]]
+    source = "data"
+    target = "data"
+  [[module.mounts]]
+    source = "layouts"
+    target = "layouts"
+  [[module.mounts]]
+    source = "content/_index.md"
+    target = "content/_index.md"
+  [[module.mounts]]
+    source = "content/_index.it.md"
+    target = "content/_index.it.md"
+  [[module.mounts]]
+    source = "content/chi-siamo"
+    target = "content/chi-siamo"
+  [[module.mounts]]
+    source = "content/diario-di-bordo"
+    target = "content/diario-di-bordo"
+  [[module.mounts]]
+    source = "content/galleria"
+    target = "content/galleria"
+  [[module.mounts]]
+    source = "content/join-us"
+    target = "content/join-us"
+  [[module.mounts]]
+    source = "content/leapcon"
+    target = "content/leapcon"
+  [[module.mounts]]
+    source = "content/staff"
+    target = "content/staff"
