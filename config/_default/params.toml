@@ -15,7 +15,7 @@ mainSections = ["diario-di-bordo"]
   layout = "fixed"
   showTitle = false
   showAppearanceSwitcher = false
-  showLanguageSwitcher = false
+  showLanguageSwitcher = true
 
 [footer]
   showMenu = true

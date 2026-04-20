@@ -1,0 +1,29 @@
+# config/_default/languages.en.toml
+languageCode = "en"
+languageName = "English"
+weight = 2
+
+title = "Giant Leap"
+
+[params]
+  displayName = "ENG"
+  isoCode = "en-US"
+  rtl = false
+  dateFormat = "January 2, 2006"
+
+  logo = "img/logo.png"
+  description = "Giant Leap is an Italian Star Citizen org focused on teamwork, fleet ops, events, and steady long-term growth."
+  copyright = "(c) { year } Giant Leap"
+
+[params.author]
+  name = "Giant Leap"
+  image = "img/logo.png"
+  headline = "Italian Star Citizen org for pilots looking for structure, teamwork, and a shared direction."
+  bio = "Giant Leap is built to coordinate org activity, fleet operations, recruitment, and community moments in a clear and sustainable way."
+
+  links = [
+    { discord = "https://discord.gg/your-invite" },
+    { github = "https://github.com/m0rph84/giant-leap-site" },
+    { instagram = "https://instagram.com/giantleap" },
+    { youtube = "https://youtube.com/@giantleap" }
+  ]

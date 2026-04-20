@@ -4,7 +4,6 @@ baseURL = "https://giantleapsite.netlify.app/"
 
 languageCode = "it"
 defaultContentLanguage = "it"
-disableLanguages = ["en"]
 
 disableKinds = ["taxonomy", "term"]
 
@@ -41,6 +40,9 @@ enableEmoji = false
   [[module.mounts]]
     source = "content/_index.it.md"
     target = "content/_index.it.md"
+  [[module.mounts]]
+    source = "content/_index.en.md"
+    target = "content/_index.en.md"
   [[module.mounts]]
     source = "content/chi-siamo"
     target = "content/chi-siamo"
