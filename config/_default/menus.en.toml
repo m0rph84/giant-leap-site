@@ -14,11 +14,6 @@
   weight = 30
 
 [[main]]
-  name = "Gallery"
-  pageRef = "galleria"
-  weight = 40
-
-[[main]]
   name = "Logbook"
   pageRef = "diario-di-bordo"
   weight = 50

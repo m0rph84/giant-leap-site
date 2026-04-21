@@ -50,9 +50,6 @@ enableEmoji = false
     source = "content/diario-di-bordo"
     target = "content/diario-di-bordo"
   [[module.mounts]]
-    source = "content/galleria"
-    target = "content/galleria"
-  [[module.mounts]]
     source = "content/join-us"
     target = "content/join-us"
   [[module.mounts]]
