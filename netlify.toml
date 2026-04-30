@@ -1,0 +1,12 @@
+[build]
+  command = "hugo --gc --minify"
+  publish = "public"
+
+[context.production]
+  command = "hugo --gc --minify --baseURL https://giantleapsite.netlify.app/"
+
+[context.branch-deploy]
+  command = "hugo --gc --minify --baseURL $DEPLOY_PRIME_URL"
+
+[context.deploy-preview]
+  command = "hugo --gc --minify --baseURL $DEPLOY_PRIME_URL"
