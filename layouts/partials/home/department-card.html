@@ -1,0 +1,10 @@
+<article class="gl-dept-card{{ with .variant }} gl-dept-card-{{ . }}{{ end }}">
+  <div class="gl-dept-code">{{ .code }}</div>
+  <h3 class="gl-dept-title">{{ .title }}</h3>
+  <p class="gl-dept-copy">{{ .description }}</p>
+  <ul class="gl-dept-list">
+    {{ range .items }}
+      <li>{{ . }}</li>
+    {{ end }}
+  </ul>
+</article>

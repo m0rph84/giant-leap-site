@@ -3,189 +3,352 @@
 {{ $logoRes := resources.Get "img/logo.png" }}
 {{ $isEn := eq .Site.Language.Lang "en" }}
 
-<div class="gl-home-gradient">
-  <div class="relative z-10 mx-auto flex max-w-5xl flex-col items-center px-6 py-16 text-center sm:py-20">
-    <div class="gl-org-badge" aria-hidden="true">GIANT LEAP // STAR CITIZEN ORG // ITA</div>
+{{ if $isEn }}
+  {{ $sections := slice
+    (dict "number" "01" "title" "About" "description" "Identity, goals, and the operating style of the org." "url" (relLangURL "chi-siamo/") "variant" "light")
+    (dict "number" "02" "title" "Recruitment" "description" "How to join, what we ask for, and what we offer new members." "url" (relLangURL "join-us/"))
+    (dict "number" "03" "title" "Departments" "description" "Exploration, industry, logistics, security, and the active branches of the org." "url" (relLangURL "dipartimenti/") "variant" "light")
+    (dict "number" "04" "title" "Logbook" "description" "Reports, updates, and official communications from the fleet." "url" (relLangURL "diario-di-bordo/"))
+    (dict "number" "05" "title" "Events" "description" "Special activities, meetups, and community-driven initiatives." "url" (relLangURL "leapcon/") "variant" "accent")
+    (dict "number" "06" "title" "Staff" "description" "Roles, references, and the people keeping the org on course." "url" (relLangURL "staff/") "variant" "accent")
+  }}
 
-    <div class="mb-6">
-      {{ with $logoRes }}
-        {{ $logo := .Fit "720x720" }}
-        <img
-          src="{{ $logo.RelPermalink }}"
-          width="{{ $logo.Width }}"
-          height="{{ $logo.Height }}"
-          alt="Giant Leap"
-          class="gl-home-logo mx-auto"
-          loading="eager"
-          decoding="async"
-        />
-      {{ else }}
-        <h1 class="text-5xl font-extrabold tracking-tight text-primary-300">Giant Leap</h1>
-      {{ end }}
-    </div>
+  {{ $departments := slice
+    (dict "code" "D-01" "title" "Exploration" "description" "Scouting routes, reconnaissance, and first-contact field work." "items" (slice "Area scouting" "Recon tasks" "Field intel") "variant" "light")
+    (dict "code" "D-02" "title" "Industry" "description" "Resource gathering, refining, and the backbone of production chains." "items" (slice "Mining loops" "Refining flow" "Industrial support"))
+    (dict "code" "D-03" "title" "Logistics" "description" "Cargo movement, supply routing, and operational coordination." "items" (slice "Freight runs" "Supply chain" "Org support") "variant" "light")
+    (dict "code" "D-04" "title" "Security" "description" "Escort, protection, and response capacity during org activity." "items" (slice "Escort cover" "Defensive response" "Operational safety"))
+  }}
 
-    <p class="max-w-3xl text-lg leading-relaxed tracking-wide text-neutral-200 sm:text-xl">
-      {{ if $isEn }}
-        An Italian <span class="font-semibold text-primary-300">Star Citizen</span> org for pilots looking for teamwork,
-        structure, and continuity in their activities, not just random sessions.
-      {{ else }}
-        Una org italiana di <span class="font-semibold text-primary-300">Star Citizen</span> per piloti che cercano gioco di squadra,
-        organizzazione e continuita nelle attivita, non solo sessioni casuali.
-      {{ end }}
-    </p>
+  <div class="gl-ref-home">
+    <section class="gl-ref-hero">
+      <div class="gl-ref-hero-shell">
+        <div class="gl-ref-hero-grid">
+          <div class="gl-ref-brand-column">
+            <div class="gl-org-badge" aria-hidden="true">GIANT LEAP // STAR CITIZEN ORG // ENG</div>
 
-    {{ with .Site.Params.author.links }}
-      <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
-        {{ range . }}
-          {{ range $name, $url := . }}
-            <a
-              href="{{ $url }}"
-              class="gl-social-link inline-flex items-center justify-center rounded-full p-3 text-neutral-100"
-              target="_blank"
-              rel="me noopener noreferrer"
-              title="{{ $name | title }}"
-            >
-              {{ partial "icon.html" $name }}
-              <span class="sr-only">{{ $name }}</span>
-            </a>
-          {{ end }}
+            <div class="gl-ref-logo-wrap">
+              {{ with $logoRes }}
+                {{ $logo := .Fit "720x720" }}
+                <img
+                  src="{{ $logo.RelPermalink }}"
+                  width="{{ $logo.Width }}"
+                  height="{{ $logo.Height }}"
+                  alt="Giant Leap"
+                  class="gl-home-logo mx-auto"
+                  loading="eager"
+                  decoding="async"
+                />
+              {{ else }}
+                <h1 class="gl-ref-hero-title">Giant Leap</h1>
+              {{ end }}
+            </div>
+
+            {{ with .Site.Params.author.links }}
+              <div class="gl-ref-social-row">
+                {{ range . }}
+                  {{ range $name, $url := . }}
+                    <a
+                      href="{{ $url }}"
+                      class="gl-social-link inline-flex items-center justify-center rounded-full p-3 text-neutral-100"
+                      target="_blank"
+                      rel="me noopener noreferrer"
+                      title="{{ $name | title }}"
+                    >
+                      {{ partial "icon.html" $name }}
+                      <span class="sr-only">{{ $name }}</span>
+                    </a>
+                  {{ end }}
+                {{ end }}
+              </div>
+            {{ end }}
+          </div>
+
+          <div class="gl-ref-copy-column">
+            <p class="gl-ref-kicker">Tactical structure for a long-term Italian org</p>
+            <h1 class="gl-ref-hero-title">A disciplined presence in the Verse.</h1>
+            <p class="gl-ref-hero-copy">
+              Giant Leap is built for pilots who want teamwork, readable structure, active departments, and continuity across fleet ops,
+              events, logistics, and community life.
+            </p>
+
+            <div class="gl-ref-cta-row">
+              <a href="{{ relLangURL "join-us/" }}" class="gl-btn-primary">Join the org</a>
+              <a href="{{ relLangURL "chi-siamo/" }}" class="gl-btn-secondary">See our direction</a>
+            </div>
+
+            <div class="gl-ref-stat-row">
+              <div class="gl-ref-stat"><span>01</span>Recruitment</div>
+              <div class="gl-ref-stat"><span>02</span>Fleet ops</div>
+              <div class="gl-ref-stat"><span>03</span>Departments</div>
+              <div class="gl-ref-stat"><span>04</span>Command flow</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="gl-ref-section">
+      <div class="gl-ref-section-head">
+        <p class="gl-ref-label">Main routes</p>
+        <h2 class="gl-ref-section-title">Org access and information architecture.</h2>
+      </div>
+
+      <div class="gl-ref-card-grid">
+        {{ range $sections }}
+          {{ partial "home/link-card.html" . }}
         {{ end }}
       </div>
-    {{ end }}
+    </section>
 
-    <div class="mt-7 flex w-full max-w-xl flex-wrap items-center justify-center gap-3">
-      <a href="{{ relLangURL "join-us/" }}" class="gl-btn-primary">
-        {{ if $isEn }}Join the org{{ else }}Unisciti alla org{{ end }}
-      </a>
-      <a href="{{ relLangURL "chi-siamo/" }}" class="gl-btn-secondary">
-        {{ if $isEn }}See our direction{{ else }}Conosci la nostra rotta{{ end }}
-      </a>
-    </div>
+    <section class="gl-ref-section">
+      <div class="gl-ref-split-grid">
+        <article class="gl-ref-panel gl-ref-panel-light">
+          <p class="gl-ref-label">Mission profile</p>
+          <h2 class="gl-ref-panel-title">How the org is structured.</h2>
+          <p class="gl-ref-panel-copy">
+            Giant Leap aims to create a reliable and credible org presence: clear onboarding, active departments, readable command
+            structures, and a way of operating that values consistency over noise.
+          </p>
+          <div class="gl-ref-chip-row">
+            <span class="gl-ref-chip">Readable roles</span>
+            <span class="gl-ref-chip">Clear channels</span>
+            <span class="gl-ref-chip">Shared objectives</span>
+          </div>
+        </article>
 
-    <div class="gl-divider" aria-hidden="true"></div>
+        <article class="gl-ref-panel gl-ref-panel-accent">
+          <p class="gl-ref-label">Who fits here</p>
+          <h2 class="gl-ref-panel-title">The kind of pilot we are looking for.</h2>
+          <ul class="gl-ref-bullet-list">
+            <li>People who value teamwork over personal spotlight.</li>
+            <li>Pilots looking for recurring structure, not random one-off sessions.</li>
+            <li>Members willing to participate in departments and support the org as a whole.</li>
+            <li>New arrivals who want a clear path to integrate and grow.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
 
-    <div class="mt-4 max-w-2xl text-sm uppercase tracking-[0.28em] text-primary-400/80">
-      {{ if $isEn }}
-        Recruitment / Events / Fleet ops / New pilot support
-      {{ else }}
-        Reclutamento / Eventi / Fleet ops / Supporto nuovi piloti
-      {{ end }}
-    </div>
+    <section class="gl-ref-section">
+      <div class="gl-ref-section-head">
+        <p class="gl-ref-label">Departments</p>
+        <h2 class="gl-ref-section-title">Active branches of the organization.</h2>
+      </div>
 
-    <div class="mt-8 grid w-full max-w-5xl grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
-      <a class="gl-card" href="{{ relLangURL "chi-siamo/" }}">
-        <div class="gl-card-icon">[01]</div>
-        <div class="gl-card-title">{{ if $isEn }}About{{ else }}Chi siamo{{ end }}</div>
-        <div class="gl-card-desc">{{ if $isEn }}Identity, goals, and operating style of the org.{{ else }}Identita, obiettivi e stile operativo della org.{{ end }}</div>
-      </a>
+      <div class="gl-ref-dept-grid">
+        {{ range $departments }}
+          {{ partial "home/department-card.html" . }}
+        {{ end }}
+      </div>
+    </section>
 
-      <a class="gl-card" href="{{ relLangURL "join-us/" }}">
-        <div class="gl-card-icon">[02]</div>
-        <div class="gl-card-title">Recruitment</div>
-        <div class="gl-card-desc">{{ if $isEn }}How to join, what we ask for, and what we offer new members.{{ else }}Come entrare, cosa chiediamo e cosa offriamo ai nuovi membri.{{ end }}</div>
-      </a>
+    <section class="gl-ref-section">
+      <div class="gl-ref-section-head">
+        <p class="gl-ref-label">Operational lanes</p>
+        <h2 class="gl-ref-section-title">What the home should communicate at a glance.</h2>
+      </div>
 
-      <a class="gl-card" href="{{ relLangURL "diario-di-bordo/" }}">
-        <div class="gl-card-icon">[03]</div>
-        <div class="gl-card-title">{{ if $isEn }}Logbook{{ else }}Diario di bordo{{ end }}</div>
-        <div class="gl-card-desc">{{ if $isEn }}Reports, updates, and official communications from the fleet.{{ else }}Report, aggiornamenti e comunicazioni ufficiali della flotta.{{ end }}</div>
-      </a>
+      <div class="gl-ref-lane-grid">
+        <article class="gl-lane-card gl-lane-card-alt">
+          <h3 class="gl-lane-title">Fleet ops</h3>
+          <p class="gl-lane-copy">Coordinated activity with clear roles, discipline, and execution standards.</p>
+        </article>
+        <article class="gl-lane-card">
+          <h3 class="gl-lane-title">Command chain</h3>
+          <p class="gl-lane-copy">Responsibilities and escalation paths that stay readable even during operations.</p>
+        </article>
+        <article class="gl-lane-card gl-lane-card-alt">
+          <h3 class="gl-lane-title">Training</h3>
+          <p class="gl-lane-copy">A place for new pilots to understand procedures, departments, and operational rhythm.</p>
+        </article>
+        <article class="gl-lane-card">
+          <h3 class="gl-lane-title">Community</h3>
+          <p class="gl-lane-copy">A serious environment that still leaves room for events, cohesion, and continuity.</p>
+        </article>
+      </div>
+    </section>
 
-      <a class="gl-card" href="{{ relLangURL "dipartimenti/" }}">
-        <div class="gl-card-icon">[04]</div>
-        <div class="gl-card-title">{{ if $isEn }}Departments{{ else }}Dipartimenti{{ end }}</div>
-        <div class="gl-card-desc">{{ if $isEn }}Exploration, industry, logistics, and the operational branches active in the org.{{ else }}Esplorazione, industria, logistica e i rami operativi attivi nella org.{{ end }}</div>
-      </a>
-
-      <a class="gl-card" href="{{ relLangURL "leapcon/" }}">
-        <div class="gl-card-icon">[05]</div>
-        <div class="gl-card-title">{{ if $isEn }}Events{{ else }}Eventi{{ end }}</div>
-        <div class="gl-card-desc">{{ if $isEn }}Special activities, meetups, and community-driven initiatives.{{ else }}Attivita speciali, incontri e iniziative community-driven.{{ end }}</div>
-      </a>
-
-      <a class="gl-card" href="{{ relLangURL "staff/" }}">
-        <div class="gl-card-icon">[06]</div>
-        <div class="gl-card-title">Staff</div>
-        <div class="gl-card-desc">{{ if $isEn }}Key roles, contacts, and internal references for the organization.{{ else }}Ruoli chiave, contatti e riferimenti interni dell'organizzazione.{{ end }}</div>
-      </a>
-    </div>
+    <section class="gl-ref-section gl-ref-updates">
+      <div class="gl-ref-section-head">
+        <p class="gl-ref-label">Briefing feed</p>
+        <h2 class="gl-ref-section-title">Latest updates from the logbook.</h2>
+      </div>
+      {{ partial "recent-articles/main.html" . }}
+    </section>
   </div>
-</div>
+{{ else }}
+  {{ $sections := slice
+    (dict "number" "01" "title" "Chi siamo" "description" "Identita, obiettivi e stile operativo della org." "url" (relLangURL "chi-siamo/") "variant" "light")
+    (dict "number" "02" "title" "Recruitment" "description" "Come entrare, cosa chiediamo e cosa offriamo ai nuovi membri." "url" (relLangURL "join-us/"))
+    (dict "number" "03" "title" "Dipartimenti" "description" "Esplorazione, industria, logistica e i rami operativi attivi nella org." "url" (relLangURL "dipartimenti/") "variant" "light")
+    (dict "number" "04" "title" "Diario di bordo" "description" "Report, aggiornamenti e comunicazioni ufficiali della flotta." "url" (relLangURL "diario-di-bordo/"))
+    (dict "number" "05" "title" "Eventi" "description" "Attivita speciali, incontri e iniziative community-driven." "url" (relLangURL "leapcon/") "variant" "accent")
+    (dict "number" "06" "title" "Staff" "description" "Ruoli, riferimenti e persone che tengono in rotta l'organizzazione." "url" (relLangURL "staff/") "variant" "accent")
+  }}
 
-<section class="mx-auto grid max-w-5xl gap-6 px-6 py-6 lg:grid-cols-[1.3fr_0.9fr]">
-  <div class="gl-panel">
-    <div class="gl-section-heading">{{ if $isEn }}How we operate{{ else }}Come operiamo{{ end }}</div>
-    <p class="gl-panel-copy">
-      {{ if $isEn }}
-        Giant Leap aims to build a credible presence in the Verse: coordinated activity, clear onboarding, and a structure that lets
-        members understand right away where they fit in.
-      {{ else }}
-        Giant Leap punta a costruire una presenza credibile nel Verse: attivita coordinate, onboarding chiaro e una struttura che permetta
-        ai membri di capire subito dove inserirsi.
-      {{ end }}
-    </p>
-    <div class="mt-6 grid gap-4 sm:grid-cols-3">
-      <div class="gl-mini-card">
-        <div class="gl-mini-label">01</div>
-        <h3 class="gl-mini-title">{{ if $isEn }}Organization{{ else }}Organizzazione{{ end }}</h3>
-        <p class="gl-mini-copy">{{ if $isEn }}Readable roles, clear communication, and explicit expectations.{{ else }}Ruoli leggibili, comunicazione chiara e aspettative esplicite.{{ end }}</p>
+  {{ $departments := slice
+    (dict "code" "D-01" "title" "Esplorazione" "description" "Scouting, ricognizione e apertura di nuove rotte operative." "items" (slice "Scouting aree" "Raccolta intel" "Ricognizione sul campo") "variant" "light")
+    (dict "code" "D-02" "title" "Industria" "description" "Raccolta risorse, raffinazione e supporto alla produzione." "items" (slice "Loop di mining" "Catena di refining" "Supporto industriale"))
+    (dict "code" "D-03" "title" "Logistica" "description" "Movimentazione merci, supporto operativo e coordinamento dei carichi." "items" (slice "Trasporto cargo" "Supply chain" "Supporto interno") "variant" "light")
+    (dict "code" "D-04" "title" "Sicurezza" "description" "Scorta, difesa e copertura delle attivita della org." "items" (slice "Escort" "Risposta difensiva" "Sicurezza operativa"))
+  }}
+
+  <div class="gl-ref-home">
+    <section class="gl-ref-hero">
+      <div class="gl-ref-hero-shell">
+        <div class="gl-ref-hero-grid">
+          <div class="gl-ref-brand-column">
+            <div class="gl-org-badge" aria-hidden="true">GIANT LEAP // STAR CITIZEN ORG // ITA</div>
+
+            <div class="gl-ref-logo-wrap">
+              {{ with $logoRes }}
+                {{ $logo := .Fit "720x720" }}
+                <img
+                  src="{{ $logo.RelPermalink }}"
+                  width="{{ $logo.Width }}"
+                  height="{{ $logo.Height }}"
+                  alt="Giant Leap"
+                  class="gl-home-logo mx-auto"
+                  loading="eager"
+                  decoding="async"
+                />
+              {{ else }}
+                <h1 class="gl-ref-hero-title">Giant Leap</h1>
+              {{ end }}
+            </div>
+
+            {{ with .Site.Params.author.links }}
+              <div class="gl-ref-social-row">
+                {{ range . }}
+                  {{ range $name, $url := . }}
+                    <a
+                      href="{{ $url }}"
+                      class="gl-social-link inline-flex items-center justify-center rounded-full p-3 text-neutral-100"
+                      target="_blank"
+                      rel="me noopener noreferrer"
+                      title="{{ $name | title }}"
+                    >
+                      {{ partial "icon.html" $name }}
+                      <span class="sr-only">{{ $name }}</span>
+                    </a>
+                  {{ end }}
+                {{ end }}
+              </div>
+            {{ end }}
+          </div>
+
+          <div class="gl-ref-copy-column">
+            <p class="gl-ref-kicker">Struttura tattica per una org italiana orientata al lungo periodo</p>
+            <h1 class="gl-ref-hero-title">Una presenza credibile nel Verse.</h1>
+            <p class="gl-ref-hero-copy">
+              Giant Leap nasce per chi cerca gioco di squadra, dipartimenti attivi, ruoli leggibili e continuita tra fleet ops,
+              logistica, eventi e vita di community.
+            </p>
+
+            <div class="gl-ref-cta-row">
+              <a href="{{ relLangURL "join-us/" }}" class="gl-btn-primary">Unisciti alla org</a>
+              <a href="{{ relLangURL "chi-siamo/" }}" class="gl-btn-secondary">Conosci la nostra rotta</a>
+            </div>
+
+            <div class="gl-ref-stat-row">
+              <div class="gl-ref-stat"><span>01</span>Reclutamento</div>
+              <div class="gl-ref-stat"><span>02</span>Fleet ops</div>
+              <div class="gl-ref-stat"><span>03</span>Dipartimenti</div>
+              <div class="gl-ref-stat"><span>04</span>Catena di comando</div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="gl-mini-card">
-        <div class="gl-mini-label">02</div>
-        <h3 class="gl-mini-title">{{ if $isEn }}Operations{{ else }}Operativita{{ end }}</h3>
-        <p class="gl-mini-copy">{{ if $isEn }}Fleet ops, group activity, and a steady presence over time.{{ else }}Fleet ops, attivita di gruppo e presenza costante nel tempo.{{ end }}</p>
+    </section>
+
+    <section class="gl-ref-section">
+      <div class="gl-ref-section-head">
+        <p class="gl-ref-label">Rotte principali</p>
+        <h2 class="gl-ref-section-title">Accesso rapido alle aree vive della org.</h2>
       </div>
-      <div class="gl-mini-card">
-        <div class="gl-mini-label">03</div>
-        <h3 class="gl-mini-title">Community</h3>
-        <p class="gl-mini-copy">{{ if $isEn }}A mature and accessible environment built to last.{{ else }}Ambiente maturo, accessibile e costruito per durare.{{ end }}</p>
+
+      <div class="gl-ref-card-grid">
+        {{ range $sections }}
+          {{ partial "home/link-card.html" . }}
+        {{ end }}
       </div>
-    </div>
+    </section>
+
+    <section class="gl-ref-section">
+      <div class="gl-ref-split-grid">
+        <article class="gl-ref-panel gl-ref-panel-light">
+          <p class="gl-ref-label">Profilo missione</p>
+          <h2 class="gl-ref-panel-title">Come e pensata la nostra struttura.</h2>
+          <p class="gl-ref-panel-copy">
+            Giant Leap punta a costruire una presenza solida e leggibile: onboarding chiaro, dipartimenti attivi, responsabilita
+            riconoscibili e un modo di operare che premi costanza e coordinazione.
+          </p>
+          <div class="gl-ref-chip-row">
+            <span class="gl-ref-chip">Ruoli leggibili</span>
+            <span class="gl-ref-chip">Canali chiari</span>
+            <span class="gl-ref-chip">Obiettivi condivisi</span>
+          </div>
+        </article>
+
+        <article class="gl-ref-panel gl-ref-panel-accent">
+          <p class="gl-ref-label">Chi cerchiamo</p>
+          <h2 class="gl-ref-panel-title">Il profilo piu adatto a questa org.</h2>
+          <ul class="gl-ref-bullet-list">
+            <li>Piloti che danno valore al lavoro di squadra piu che al protagonismo.</li>
+            <li>Persone che cercano una struttura stabile, non solo sessioni casuali.</li>
+            <li>Membri disposti a contribuire ai dipartimenti e al funzionamento generale.</li>
+            <li>Nuovi arrivati che vogliono una rotta chiara per inserirsi e crescere.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="gl-ref-section">
+      <div class="gl-ref-section-head">
+        <p class="gl-ref-label">Dipartimenti</p>
+        <h2 class="gl-ref-section-title">I rami attivi dell'organizzazione.</h2>
+      </div>
+
+      <div class="gl-ref-dept-grid">
+        {{ range $departments }}
+          {{ partial "home/department-card.html" . }}
+        {{ end }}
+      </div>
+    </section>
+
+    <section class="gl-ref-section">
+      <div class="gl-ref-section-head">
+        <p class="gl-ref-label">Aree operative</p>
+        <h2 class="gl-ref-section-title">Cosa deve emergere a colpo d'occhio dalla home.</h2>
+      </div>
+
+      <div class="gl-ref-lane-grid">
+        <article class="gl-lane-card gl-lane-card-alt">
+          <h3 class="gl-lane-title">Fleet ops</h3>
+          <p class="gl-lane-copy">Attivita coordinate con ruoli chiari, disciplina operativa e standard leggibili.</p>
+        </article>
+        <article class="gl-lane-card">
+          <h3 class="gl-lane-title">Catena di comando</h3>
+          <p class="gl-lane-copy">Responsabilita e flussi decisionali comprensibili anche durante le operazioni.</p>
+        </article>
+        <article class="gl-lane-card gl-lane-card-alt">
+          <h3 class="gl-lane-title">Training</h3>
+          <p class="gl-lane-copy">Uno spazio in cui i nuovi piloti possono capire procedure, reparti e ritmo della org.</p>
+        </article>
+        <article class="gl-lane-card">
+          <h3 class="gl-lane-title">Community</h3>
+          <p class="gl-lane-copy">Un ambiente serio che lasci spazio anche a eventi, coesione e continuita nel tempo.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="gl-ref-section gl-ref-updates">
+      <div class="gl-ref-section-head">
+        <p class="gl-ref-label">Briefing feed</p>
+        <h2 class="gl-ref-section-title">Ultimi aggiornamenti dal diario di bordo.</h2>
+      </div>
+      {{ partial "recent-articles/main.html" . }}
+    </section>
   </div>
-
-  <div class="gl-panel gl-panel-accent">
-    <div class="gl-section-heading">{{ if $isEn }}Who we are looking for{{ else }}Chi cerchiamo{{ end }}</div>
-    <ul class="gl-list">
-      {{ if $isEn }}
-        <li>Pilots who value teamwork more than personal spotlight.</li>
-        <li>People who are reliable, respectful, and collaborative on org channels.</li>
-        <li>Members interested in growing together in an orderly way.</li>
-        <li>Newcomers who want to find a clear structure.</li>
-      {{ else }}
-        <li>Piloti che apprezzano il gioco di squadra piu del protagonismo.</li>
-        <li>Persone costanti, corrette e collaborative sui canali della org.</li>
-        <li>Membri interessati a crescere insieme in modo ordinato.</li>
-        <li>Nuovi arrivati che vogliono trovare una struttura chiara.</li>
-      {{ end }}
-    </ul>
-  </div>
-</section>
-
-<section class="mx-auto max-w-5xl px-6 py-6">
-  <div class="gl-panel">
-    <div class="gl-section-heading">{{ if $isEn }}Org areas{{ else }}Aree della org{{ end }}</div>
-    <div class="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-      <div class="gl-lane-card">
-        <h3 class="gl-lane-title">{{ if $isEn }}Recruitment{{ else }}Reclutamento{{ end }}</h3>
-        <p class="gl-lane-copy">{{ if $isEn }}Gradual entry, introductions, and alignment on values and goals.{{ else }}Ingresso graduale, presentazione e allineamento con valori e obiettivi.{{ end }}</p>
-      </div>
-      <div class="gl-lane-card">
-        <h3 class="gl-lane-title">Fleet ops</h3>
-        <p class="gl-lane-copy">{{ if $isEn }}Structured activity with a focus on coordination, discipline, and clarity.{{ else }}Attivita organizzate con focus su coordinazione, disciplina e leggibilita.{{ end }}</p>
-      </div>
-      <div class="gl-lane-card">
-        <h3 class="gl-lane-title">{{ if $isEn }}Events{{ else }}Eventi{{ end }}</h3>
-        <p class="gl-lane-copy">{{ if $isEn }}Internal and community meetups that keep the org active and visible.{{ else }}Appuntamenti interni e community per tenere viva la presenza della org.{{ end }}</p>
-      </div>
-      <div class="gl-lane-card">
-        <h3 class="gl-lane-title">{{ if $isEn }}Communications{{ else }}Comunicazioni{{ end }}</h3>
-        <p class="gl-lane-copy">{{ if $isEn }}Logbook and official channels used to update members and interested pilots.{{ else }}Diario di bordo e canali ufficiali per aggiornare membri e interessati.{{ end }}</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="mx-auto max-w-5xl px-6 pb-16 pt-6">
-  <div class="gl-section-heading">{{ if $isEn }}Latest updates{{ else }}Ultimi aggiornamenti{{ end }}</div>
-  {{ partial "recent-articles/main.html" . }}
-</div>
+{{ end }}
