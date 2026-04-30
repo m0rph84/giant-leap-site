@@ -17,6 +17,11 @@
   weight = 30
 
 [[main]]
+  name = "Dipartimenti"
+  pageRef = "dipartimenti"
+  weight = 40
+
+[[main]]
   name = "Diario di bordo"
   pageRef = "diario-di-bordo"
   weight = 50
